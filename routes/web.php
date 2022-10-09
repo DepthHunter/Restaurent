@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/home',[\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/',[\App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/redirects',[\App\Http\Controllers\HomeController::class, 'redirects']);
 
 Route::middleware([
     'auth:sanctum',
