@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[\App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/users',[\App\Http\Controllers\AdminController::class, 'user']);
+
+Route::get('/deletemenu/{id}',[\App\Http\Controllers\AdminController::class, 'deletemenu']);
+
+Route::get('/updateview/{id}',[\App\Http\Controllers\AdminController::class, 'updateview']);
+
+Route::post('/update/{id}',[\App\Http\Controllers\AdminController::class, 'update']);
+
+Route::get('/foodmenu',[\App\Http\Controllers\AdminController::class, 'foodmenu']);
+
+Route::post('/uploadfood',[\App\Http\Controllers\AdminController::class, 'upload']);
+
+Route::get('/deleteuser/{id}',[\App\Http\Controllers\AdminController::class, 'deleteuser']);
 
 Route::get('/redirects',[\App\Http\Controllers\HomeController::class, 'redirects']);
 

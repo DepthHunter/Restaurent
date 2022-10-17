@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>HTML</title>
+<x-app-layout>
 
-    <style>
-        article, aside, details, figcaption, figure, footer,header,
-        hgroup, menu, nav, section { display: block; }
-    </style>
+</x-app-layout>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    @include('admin.admincss')
 </head>
 <body>
-<h1>Trash</h1>
+<div class="container-scroller">
+@include('admin.navbar')
+</div>
+
+@include('admin.adminscript')
+
+
 </body>
 </html>
