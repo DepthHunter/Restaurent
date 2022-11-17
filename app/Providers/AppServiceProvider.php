@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Services\ChefService;
+use App\Services\HomeService;
+use App\Services\Impl\ChefServiceImpl;
+use App\Services\Impl\HomeServiceImpl;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(HomeService::class, HomeServiceImpl::class);
+        $this->app->bind(ChefService::class, ChefServiceImpl::class);
     }
 
     /**

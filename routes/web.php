@@ -25,6 +25,7 @@ Route::get('/updateview/{id}',[\App\Http\Controllers\AdminController::class, 'up
 
 Route::post('/update/{id}',[\App\Http\Controllers\AdminController::class, 'update']);
 
+
 Route::get('/foodmenu',[\App\Http\Controllers\AdminController::class, 'foodmenu']);
 
 Route::post('/uploadfood',[\App\Http\Controllers\AdminController::class, 'upload']);
@@ -32,6 +33,20 @@ Route::post('/uploadfood',[\App\Http\Controllers\AdminController::class, 'upload
 Route::get('/deleteuser/{id}',[\App\Http\Controllers\AdminController::class, 'deleteuser']);
 
 Route::get('/redirects',[\App\Http\Controllers\HomeController::class, 'redirects']);
+
+Route::post('/reservation',[\App\Http\Controllers\AdminController::class, 'reservation']);
+
+Route::get('/viewreservation',[\App\Http\Controllers\AdminController::class, 'viewreservation']);
+
+Route::get('/viewchef',[\App\Http\Controllers\AdminController::class, 'viewchef']);
+
+Route::post('/uploadchef',[\App\Http\Controllers\AdminController::class, 'uploadchef']);
+
+Route::get('/updatechef/{id}',[\App\Http\Controllers\AdminController::class, 'updatechef']);
+
+Route::post('/updatefoodchef/{id}',[\App\Http\Controllers\AdminController::class, 'updatefoodchef']);
+
+Route::get('/deletechef/{id}',[\App\Http\Controllers\AdminController::class, 'deletechef']);
 
 Route::middleware([
     'auth:sanctum',
