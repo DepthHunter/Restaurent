@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(HomeService::class, HomeServiceImpl::class);
         $this->app->bind(ChefService::class, ChefServiceImpl::class);
+
+
     }
 
     /**

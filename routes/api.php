@@ -14,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+  //  return $request->user();
+// });
 
 Route::get('/foods', [\App\Http\Controllers\API\HomeController::class, 'index']);
 
 Route::get('/foodchefs', [\App\Http\Controllers\API\ChefController::class, 'index']);
 
+Route::group(['prefix' => 'user'], function() {
+    Route::post('/register', [\App\Http\Controllers\API\AuthController::class, 'register']);
+    Route::post('/login', [\App\Http\Controllers\API\AuthController::class, 'login']);
+});
+
+
+Route::group(['prefix' => 'emps'], function() {
+    Route::post('/store', [\App\Http\Controllers\API\EmployeeController::class, 'store'])
+        ->middleware(['auth:api', 'admin']);
+    Route::get('/', [\App\Http\Controllers\API\EmployeeController::class, 'index'])->middleware(['auth:api']);
+});
